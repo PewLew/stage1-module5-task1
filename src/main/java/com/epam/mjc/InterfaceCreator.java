@@ -8,11 +8,21 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+interface PredicateCreation{
+
+}
+
+
 public class InterfaceCreator {
 
-    public Predicate<List<String>> isValuesStartWithUpperCase() {
-        throw new UnsupportedOperationException("You should implement this method.");
-    }
+    public Predicate<List<String>> isValuesStartWithUpperCase = x ->  {
+        for(var e : x){
+            if(!Character.isUpperCase(e.charAt(0)))
+                return false;
+        }
+
+        return true;
+    };
 
     public Consumer<List<Integer>> addEvenValuesAtTheEnd() {
         throw new UnsupportedOperationException("You should implement this method.");
